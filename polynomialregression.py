@@ -52,6 +52,7 @@ from sklearn.preprocessing import PolynomialFeatures
 from sklearn.linear_model import LinearRegression
 # Below 2 lines of code will change our current feature matrix x to a new feature matrix "x_poly" which will contain the feature values and alo their power values Ex. x,x^2,x^3.... etc.
 # We need to pass the number of degrees uptil which power of feature we want in our new feature matrix.
+# we can vary the value of degree and rebuild the model again and again to get the best model and the respective value of power.
 poly_reg = PolynomialFeatures(degree = 4)
 x_poly = poly_reg.fit_transform(x)
 # Unlike multiple linear equation we dont have to add constant by adding the column of one's(1's) (Intercept) it is done automatically by PolynomialFeatures()
@@ -87,6 +88,7 @@ plt.show()
 
 # Visualising the Polynomial Regression results (for higher resolution and smoother curve)
 # If we want the graph to be more accurate by making inputs complicated.
+# It gives a much smoother curve.
 x_grid = np.arange(min(x), max(x), 0.1)
 x_grid = x_grid.reshape((len(x_grid), 1))
 plt.scatter(x, y, color = 'red')
